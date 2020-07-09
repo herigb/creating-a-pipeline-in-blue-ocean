@@ -7,10 +7,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-         withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-            echo 'Building'
-            sh 'npm install'
-         }
+        echo 'Building'
       }
     }
 
