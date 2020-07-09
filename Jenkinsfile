@@ -11,14 +11,21 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing'
+        sh './jenkins/scripts/test.sh'
       }
     }
 
-    stage('Deploy') {
+    stage('Delivery') {
       steps {
         echo 'Deploying'
+        sh './jenkins/scripts/deliver.sh'
+        input '\'Finished using the web site? (Click "Proceed" to continue)'
+        sh './jenkins/scripts/kill.sh'
       }
     }
 
+  }
+  environment {
+    CI = 'true'
   }
 }
