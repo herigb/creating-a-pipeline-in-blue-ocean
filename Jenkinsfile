@@ -13,6 +13,7 @@ pipeline {
         echo 'Testing'
         sh '''ls -l
 chmod -R ugo+rwx jenkins && ./jenkins/scripts/test.sh'''
+        junit 'target/**/*.xml'
       }
     }
 
