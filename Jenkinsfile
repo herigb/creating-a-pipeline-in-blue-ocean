@@ -12,7 +12,7 @@ pipeline {
       steps {
         echo 'Testing'
         sh '''ls -l
-./jenkins/scripts/test.sh'''
+chmod -R ugo+rwx jenkins && ./jenkins/scripts/test.sh'''
       }
     }
 
