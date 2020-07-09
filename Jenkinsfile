@@ -11,7 +11,8 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing'
-        sh './jenkins/scripts/test.sh'
+        sh '''ls -l
+./jenkins/scripts/test.sh'''
       }
     }
 
